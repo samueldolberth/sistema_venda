@@ -40,6 +40,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         menu_produtos = new javax.swing.JMenuItem();
+        menu_fornecedores = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -132,6 +133,14 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         jMenu4.add(menu_produtos);
 
+        menu_fornecedores.setText("Fornecedores");
+        menu_fornecedores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_fornecedoresActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menu_fornecedores);
+
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Configurações");
@@ -161,6 +170,14 @@ public class NewJFrame extends javax.swing.JFrame {
         view_produtos.setVisible(true);
         
     }//GEN-LAST:event_menu_produtosActionPerformed
+
+    private void menu_fornecedoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_fornecedoresActionPerformed
+        // TODO add your handling code here:
+        view_fornecedor view_fornecedor = new view_fornecedor();
+        dp.add(view_fornecedor);
+        dp.moveToFront(view_fornecedor);
+        view_fornecedor.setVisible(true);
+    }//GEN-LAST:event_menu_fornecedoresActionPerformed
 
     /**
      * @param args the command line arguments
@@ -209,6 +226,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem menu_fornecedores;
     private javax.swing.JMenuItem menu_produtos;
     private javax.swing.JPanel painelSuperior;
     private javax.swing.JLabel user_icon;
