@@ -42,6 +42,7 @@ public class NewJFrame extends javax.swing.JFrame {
         menu_produtos = new javax.swing.JMenuItem();
         menu_fornecedores = new javax.swing.JMenuItem();
         menu_cliente = new javax.swing.JMenuItem();
+        menu_usuario = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -155,6 +156,14 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         jMenu4.add(menu_cliente);
 
+        menu_usuario.setText("Usuários");
+        menu_usuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_usuarioActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menu_usuario);
+
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Configurações");
@@ -208,6 +217,15 @@ public class NewJFrame extends javax.swing.JFrame {
         telalogin.setVisible(true);
     }//GEN-LAST:event_btnSairActionPerformed
 
+    private void menu_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_usuarioActionPerformed
+        // TODO add your handling code here:
+        
+        view_usuario view_usuario = new view_usuario();
+        dp.add(view_usuario);
+        dp.moveToFront(view_usuario);
+        view_usuario.setVisible(true);
+    }//GEN-LAST:event_menu_usuarioActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -258,6 +276,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem menu_cliente;
     private javax.swing.JMenuItem menu_fornecedores;
     private javax.swing.JMenuItem menu_produtos;
+    private javax.swing.JMenuItem menu_usuario;
     private javax.swing.JPanel painelSuperior;
     private javax.swing.JLabel user_icon;
     // End of variables declaration//GEN-END:variables
