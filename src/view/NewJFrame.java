@@ -30,7 +30,7 @@ public class NewJFrame extends javax.swing.JFrame {
         background = new javax.swing.JPanel();
         painelSuperior = new javax.swing.JPanel();
         user_icon = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSair = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         dp = new javax.swing.JDesktopPane();
@@ -41,6 +41,7 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         menu_produtos = new javax.swing.JMenuItem();
         menu_fornecedores = new javax.swing.JMenuItem();
+        menu_cliente = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -49,7 +50,12 @@ public class NewJFrame extends javax.swing.JFrame {
 
         user_icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/avatar_icon_small.png"))); // NOI18N
 
-        jButton1.setText("Sair");
+        btnSair.setText("Sair");
+        btnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSairActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("Usuário");
 
@@ -67,7 +73,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(user_icon, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(13, 13, 13)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12))
         );
         painelSuperiorLayout.setVerticalGroup(
@@ -79,7 +85,7 @@ public class NewJFrame extends javax.swing.JFrame {
                 .addGroup(painelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(painelSuperiorLayout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(jButton1))
+                        .addComponent(btnSair))
                     .addGroup(painelSuperiorLayout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addGroup(painelSuperiorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -141,6 +147,14 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         jMenu4.add(menu_fornecedores);
 
+        menu_cliente.setText("Clientes");
+        menu_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menu_clienteActionPerformed(evt);
+            }
+        });
+        jMenu4.add(menu_cliente);
+
         jMenuBar1.add(jMenu4);
 
         jMenu5.setText("Configurações");
@@ -179,6 +193,21 @@ public class NewJFrame extends javax.swing.JFrame {
         view_fornecedor.setVisible(true);
     }//GEN-LAST:event_menu_fornecedoresActionPerformed
 
+    private void menu_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menu_clienteActionPerformed
+        // TODO add your handling code here:
+        view_cliente view_cliente = new view_cliente();
+        dp.add(view_cliente);
+        dp.moveToFront(view_cliente);
+        view_cliente.setVisible(true);
+    }//GEN-LAST:event_menu_clienteActionPerformed
+
+    private void btnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSairActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        view_login telalogin = new view_login();
+        telalogin.setVisible(true);
+    }//GEN-LAST:event_btnSairActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -216,8 +245,8 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
+    private javax.swing.JButton btnSair;
     private javax.swing.JDesktopPane dp;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
@@ -226,6 +255,7 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem menu_cliente;
     private javax.swing.JMenuItem menu_fornecedores;
     private javax.swing.JMenuItem menu_produtos;
     private javax.swing.JPanel painelSuperior;
