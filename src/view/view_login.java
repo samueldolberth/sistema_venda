@@ -153,6 +153,7 @@ public class view_login extends javax.swing.JFrame {
         if (txtLogin.getText().equals("usuario") && new String(txtSenha.getPassword()).equals("123")){
             NewJFrame view_principal = new NewJFrame();
             view_principal.setVisible(true);
+            this.dispose();
            
         } else {
             JOptionPane.showMessageDialog(null, "Dados inválidos", "ERRO", JOptionPane.ERROR_MESSAGE);
