@@ -140,7 +140,7 @@ public class view_usuario extends javax.swing.JInternalFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
-        view_cadastro_usuario1 telacadusu = new view_cadastro_usuario1();
+        view_cadastro_usuario telacadusu = new view_cadastro_usuario();
         telacadusu.setVisible(true);
         
     }//GEN-LAST:event_btnCadastrarActionPerformed
