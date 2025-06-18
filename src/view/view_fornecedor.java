@@ -50,6 +50,8 @@ public class view_fornecedor extends javax.swing.JInternalFrame {
         jButton1 = new javax.swing.JButton();
         btnCadastrar = new javax.swing.JButton();
 
+        setClosable(true);
+        setMaximizable(true);
         addInternalFrameListener(new javax.swing.event.InternalFrameListener() {
             public void internalFrameActivated(javax.swing.event.InternalFrameEvent evt) {
             }
