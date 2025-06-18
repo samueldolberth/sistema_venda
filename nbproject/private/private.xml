@@ -4,10 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/IFC/PROJETO/java/Market/src/view/view_login.java</file>
-            <file>file:/C:/IFC/PROJETO/java/Market/src/view/view_produtos.java</file>
             <file>file:/C:/IFC/PROJETO/java/Market/src/view/NewJFrame.java</file>
+            <file>file:/C:/IFC/PROJETO/java/Market/src/view/view_cadastro_fornecedor.java</file>
+            <file>file:/C:/IFC/PROJETO/java/Market/src/view/view_fornecedor.java</file>
             <file>file:/C:/IFC/PROJETO/java/Market/src/view/view_principal.java</file>
-            <file>file:/C:/IFC/PROJETO/java/Market/src/view/view_cadastro_produto.java</file>
         </group>
     </open-files>
 </project-private>
