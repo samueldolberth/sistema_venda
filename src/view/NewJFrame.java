@@ -37,9 +37,11 @@ public class NewJFrame extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         btnVenda = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        btnCompra = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        btnPedido = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         menu_produtos = new javax.swing.JMenuItem();
         menu_fornecedores = new javax.swing.JMenuItem();
@@ -133,22 +135,33 @@ public class NewJFrame extends javax.swing.JFrame {
         });
         jMenu1.add(btnVenda);
 
+        jMenuItem1.setText("Histórico de venda");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Compras");
 
-        btnCompra.setText("Compra");
-        btnCompra.addActionListener(new java.awt.event.ActionListener() {
+        btnPedido.setText("Pedido");
+        btnPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCompraActionPerformed(evt);
+                btnPedidoActionPerformed(evt);
             }
         });
-        jMenu2.add(btnCompra);
+        jMenu2.add(btnPedido);
+
+        jMenuItem3.setText("Confirmar compra");
+        jMenu2.add(jMenuItem3);
+
+        jMenuItem2.setText("Histórico de compra");
+        jMenu2.add(jMenuItem2);
 
         jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Inventário");
-        jMenuBar1.add(jMenu3);
 
         jMenu4.setText("Cadastro");
 
@@ -255,13 +268,17 @@ public class NewJFrame extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnVendaActionPerformed
 
-    private void btnCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCompraActionPerformed
+    private void btnPedidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPedidoActionPerformed
         // TODO add your handling code here:
         view_compra view_compra = new view_compra();
         dp.add(view_compra);
         dp.moveToFront(view_compra);
         view_compra.setVisible(true);
-    }//GEN-LAST:event_btnCompraActionPerformed
+    }//GEN-LAST:event_btnPedidoActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -300,7 +317,7 @@ public class NewJFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
-    private javax.swing.JMenuItem btnCompra;
+    private javax.swing.JMenuItem btnPedido;
     private javax.swing.JButton btnSair;
     private javax.swing.JMenuItem btnVenda;
     private javax.swing.JDesktopPane dp;
@@ -308,10 +325,12 @@ public class NewJFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem menu_cliente;
     private javax.swing.JMenuItem menu_fornecedores;
     private javax.swing.JMenuItem menu_produtos;
