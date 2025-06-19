@@ -67,6 +67,9 @@ public class view_venda extends javax.swing.JInternalFrame {
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
 
+        setClosable(true);
+        setMaximizable(true);
+
         jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jPanel3.setBackground(new java.awt.Color(204, 0, 51));

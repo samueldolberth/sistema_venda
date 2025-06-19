@@ -36,6 +36,7 @@ public class NewJFrame extends javax.swing.JFrame {
         dp = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        btnVenda = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
@@ -122,6 +123,15 @@ public class NewJFrame extends javax.swing.JFrame {
         );
 
         jMenu1.setText("Vendas");
+
+        btnVenda.setText("Venda");
+        btnVenda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVendaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(btnVenda);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Compras");
@@ -226,6 +236,15 @@ public class NewJFrame extends javax.swing.JFrame {
         view_usuario.setVisible(true);
     }//GEN-LAST:event_menu_usuarioActionPerformed
 
+    private void btnVendaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVendaActionPerformed
+        // TODO add your handling code here:
+        view_venda view_venda = new view_venda();
+        dp.add(view_venda);
+        dp.moveToFront(view_venda);
+        view_venda.setVisible(true);
+        
+    }//GEN-LAST:event_btnVendaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -264,6 +283,7 @@ public class NewJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
     private javax.swing.JButton btnSair;
+    private javax.swing.JMenuItem btnVenda;
     private javax.swing.JDesktopPane dp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
