@@ -6,7 +6,6 @@ package dao;
 
 import model.Usuario;
 import java.sql.*;
-import java.util.*;
 
 /**
  *
