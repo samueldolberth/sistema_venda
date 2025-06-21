@@ -13,13 +13,16 @@ public class Usuario {
     private String nome;
     private String login;
     private String senha;
+    private String cpf;
 
     // construtor
-    public Usuario(int id, String nome, String login, String senha) {
+    public Usuario(int id, String nome, String login, String senha, String cpf) {
         this.id = id;
         this.nome = nome;
         this.login = login;
         this.senha = senha;
+        this.cpf = cpf;
+        
     }
     
     // get & set
@@ -55,6 +58,11 @@ public class Usuario {
         this.senha = senha;
     }
     
+    public String getCpf(){
+        return cpf;
+    }
     
-    
+    public void setCpf(String cpf){
+        this.cpf = cpf;
+    }
 }
