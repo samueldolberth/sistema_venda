@@ -14,17 +14,28 @@ import java.sql.*;
 public class UsuarioDAO {
     
     private final Connection connection;
+    Long id;
+    String nome, cpf, login, senha;
 
     public UsuarioDAO(Connection connection) {
         this.connection = connection;
     }
     
     
-    public void insert(Usuario usuario) throws SQLException{
+    public void adiciona(Usuario usuario) throws SQLException{
         
-        String sql = "INSERT INTO usuario(login, senha) VALUES ('"+usuario.getLogin()+"', '"+usuario.getSenha()+"');"; 
-        PreparedStatement statement = connection.prepareStatement (sql);
-        statement.execute();
+        String sql = "INSERT INTO usuario(login, senha) VALUES (?, ?);"; 
+        
+        try {
+            PreparedStatement statement = connection.prepareStatement (sql);
+            statement.setString(1, usuario.getNome());
+            statement.setString(2, usuario.getSenha());
+            statement.execute();
+            statement.close();
+                
+        } catch(SQLException u){
+            throw new RuntimeException(u);
+        }
         connection.close();
             
             
