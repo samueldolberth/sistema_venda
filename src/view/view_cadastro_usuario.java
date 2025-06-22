@@ -227,7 +227,13 @@ public class view_cadastro_usuario extends javax.swing.JFrame {
                 System.out.println("Erro na conexao com o banco ao enviar os dados do usuario");
             }
         } catch(SQLException u){
-            System.out.println("Erro");
+            //servidor DB fechado
+            JOptionPane.showMessageDialog(null, "Erro ao cadastrar usuário, por favor tente novamente!");
+            campoNome.setText("");
+                campoLogin.setText("");
+                campoSenha.setText("");
+                campoConfirmarSenha.setText("");
+            
         }
      
     
