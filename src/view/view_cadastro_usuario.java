@@ -4,7 +4,13 @@
  */
 package view;
 
+import dao.UsuarioDAO;
 import javax.swing.JOptionPane;
+import model.Usuario;
+import java.sql.*;
+import dao.Conexao;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -34,7 +40,7 @@ public class view_cadastro_usuario extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        campoID = new javax.swing.JTextField();
         campoNome = new javax.swing.JTextField();
         campoLogin = new javax.swing.JTextField();
         campoSenha = new javax.swing.JPasswordField();
@@ -58,7 +64,7 @@ public class view_cadastro_usuario extends javax.swing.JFrame {
 
         jLabel5.setText("CONFIRMAR SENHA");
 
-        jTextField1.setEditable(false);
+        campoID.setEditable(false);
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Padrão", "Admin" }));
 
@@ -91,7 +97,7 @@ public class view_cadastro_usuario extends javax.swing.JFrame {
                                 .addGap(89, 89, 89)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(campoLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(campoID, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addGap(89, 89, 89)
@@ -108,7 +114,7 @@ public class view_cadastro_usuario extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(campoID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -182,14 +188,49 @@ public class view_cadastro_usuario extends javax.swing.JFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         // TODO add your handling code here:
-        if(campoLogin.getText().matches("") || campoSenha.getText().matches("") || campoConfirmarSenha.getText().matches("")){
-            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
-        } else {
-            
-            
-            
+        Usuario usuario = new Usuario();
+        
+        if (campoLogin.getText().isEmpty() 
+    || campoSenha.getPassword().length == 0 
+    || campoConfirmarSenha.getPassword().length == 0) {
+    
+    JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
+
+} else {
+    // Converte char[] para String, pois o campo senha não é textfield, e sim password
+    String senha = new String(campoSenha.getPassword());
+    String confirmarSenha = new String(campoConfirmarSenha.getPassword());
+
+    if (senha.equals(confirmarSenha)) {
+        usuario.setNome(campoLogin.getText());
+        usuario.setSenha(senha);
+    } else {
+        JOptionPane.showMessageDialog(null, "Campo confirmar senha diferente do campo senha!");
+    }
+}
+
+        
+        try {Connection connection = new Conexao().getConnection(); //instancia a conexao
+            dao.UsuarioDAO dao = new UsuarioDAO(connection); // instancia o objetoDAO
+            try {
+                dao.adiciona(usuario); //metodo insert no database
+                JOptionPane.showMessageDialog(null, "Usuario cadastrado com sucesso!");
+                
+                //limpa todos os campos
+                campoNome.setText("");
+                campoLogin.setText("");
+                campoSenha.setText("");
+                campoConfirmarSenha.setText("");
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(view_cadastro_usuario.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Erro na conexao com o banco ao enviar os dados do usuario");
+            }
+        } catch(SQLException u){
+            System.out.println("Erro");
         }
-            
+     
+    
     }//GEN-LAST:event_btnCadastrarActionPerformed
 
     /**
@@ -232,6 +273,7 @@ public class view_cadastro_usuario extends javax.swing.JFrame {
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton btnCancelar;
     private javax.swing.JPasswordField campoConfirmarSenha;
+    private javax.swing.JTextField campoID;
     private javax.swing.JTextField campoLogin;
     private javax.swing.JTextField campoNome;
     private javax.swing.JPasswordField campoSenha;
@@ -243,6 +285,5 @@ public class view_cadastro_usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

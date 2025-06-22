@@ -95,7 +95,7 @@
                                   <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="campoLogin" min="-2" pref="307" max="-2" attributes="0"/>
-                                      <Component id="jTextField1" min="-2" pref="78" max="-2" attributes="0"/>
+                                      <Component id="campoID" min="-2" pref="78" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
@@ -120,7 +120,7 @@
                   <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="campoID" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -175,7 +175,7 @@
             <Property name="text" type="java.lang.String" value="CONFIRMAR SENHA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="campoID">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
