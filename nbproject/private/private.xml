@@ -3,12 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/IFC/PROJETO/java/Market/src/view/view_produtos.java</file>
-            <file>file:/C:/IFC/PROJETO/java/Market/src/view/view_venda.java</file>
-            <file>file:/C:/IFC/PROJETO/java/Market/src/view/NewJFrame.java</file>
-            <file>file:/C:/IFC/PROJETO/java/Market/src/dao/TestaConexao.java</file>
+            <file>file:/C:/IFC/PROJETO/java/Market/src/dao/UsuarioDAO.java</file>
             <file>file:/C:/IFC/PROJETO/java/Market/src/view/view_cadastro_usuario.java</file>
-            <file>file:/C:/IFC/PROJETO/java/Market/src/dao/Conexao.java</file>
+            <file>file:/C:/IFC/PROJETO/java/Market/src/model/Produto.java</file>
+            <file>file:/C:/IFC/PROJETO/java/Market/src/dao/ProdutoDAO.java</file>
+            <file>file:/C:/IFC/PROJETO/java/Market/src/view/view_cadastro_produto.java</file>
         </group>
     </open-files>
 </project-private>

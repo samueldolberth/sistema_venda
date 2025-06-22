@@ -15,7 +15,7 @@ public class Usuario {
     private String senha;
     private String cpf;
 
-    // construtor
+    // construtor full
     public Usuario(int id, String nome, String login, String senha, String cpf) {
         this.id = id;
         this.nome = nome;
@@ -24,10 +24,18 @@ public class Usuario {
         this.cpf = cpf;
     }
     
+    //construtor login
+    public Usuario(String login, String senha){
+        this.login = login;
+        this.senha = senha;
+    }
+    
+    //construtor free
     public Usuario(){
         
     }
-    // get & set
+    
+    // getters & setters
     public int getId() {
         return id;
     }
