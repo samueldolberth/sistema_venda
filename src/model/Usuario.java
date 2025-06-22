@@ -22,9 +22,11 @@ public class Usuario {
         this.login = login;
         this.senha = senha;
         this.cpf = cpf;
-        
     }
     
+    public Usuario(){
+        
+    }
     // get & set
     public int getId() {
         return id;
