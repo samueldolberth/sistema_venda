@@ -190,27 +190,31 @@ public class view_cadastro_usuario extends javax.swing.JFrame {
         // TODO add your handling code here:
         Usuario usuario = new Usuario();
         
+        //verifica se os campos estão vazios
         if (campoLogin.getText().isEmpty() 
-    || campoSenha.getPassword().length == 0 
-    || campoConfirmarSenha.getPassword().length == 0) {
+            || campoSenha.getPassword().length == 0 
+            || campoConfirmarSenha.getPassword().length == 0) {
     
-    JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
+            JOptionPane.showMessageDialog(rootPane, "Preencha todos os campos");
 
-} else {
-    // Converte char[] para String, pois o campo senha não é textfield, e sim password
-    String senha = new String(campoSenha.getPassword());
-    String confirmarSenha = new String(campoConfirmarSenha.getPassword());
+        } else {
+            // Converte char[] para String, pois o campo senha não é textfield, e sim password
+            String senha = new String(campoSenha.getPassword());
+            String confirmarSenha = new String(campoConfirmarSenha.getPassword());
 
-    if (senha.equals(confirmarSenha)) {
-        usuario.setNome(campoLogin.getText());
-        usuario.setSenha(senha);
-    } else {
-        JOptionPane.showMessageDialog(null, "Campo confirmar senha diferente do campo senha!");
-    }
-}
+            if (senha.equals(confirmarSenha)) {
+                usuario.setNome(campoLogin.getText());
+                usuario.setSenha(senha);
+            } else {
+                JOptionPane.showMessageDialog(null, "Campo confirmar senha diferente do campo senha!");
+            }
+        }
 
         
-        try {Connection connection = new Conexao().getConnection(); //instancia a conexao
+        try {
+            
+            Connection connection = new Conexao().getConnection(); //instancia a conexao
+        
             dao.UsuarioDAO dao = new UsuarioDAO(connection); // instancia o objetoDAO
             try {
                 dao.adiciona(usuario); //metodo insert no database
@@ -230,9 +234,9 @@ public class view_cadastro_usuario extends javax.swing.JFrame {
             //servidor DB fechado
             JOptionPane.showMessageDialog(null, "Erro ao cadastrar usuário, por favor tente novamente!");
             campoNome.setText("");
-                campoLogin.setText("");
-                campoSenha.setText("");
-                campoConfirmarSenha.setText("");
+            campoLogin.setText("");
+            campoSenha.setText("");
+            campoConfirmarSenha.setText("");
             
         }
      

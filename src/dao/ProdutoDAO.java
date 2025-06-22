@@ -21,12 +21,13 @@ public class ProdutoDAO {
         this.connection = connection;
     }
     
-    public void insert(Produto produto) throws SQLException{
+    public void adiciona(Produto produto) throws SQLException{
         
-        String sql = "INSERT INTO produto(descricao, preco) VALUES ('"+produto.getDescricao()+"', '"+produto.getPreco()+"');"; 
-        PreparedStatement statement = connection.prepareStatement (sql);
-        statement.execute();
-        connection.close();
+        try (connection) {
+            String sql = "INSERT INTO produto(descricao, preco) VALUES ('"+produto.getDescricao()+"', '"+produto.getPreco()+"');";
+            PreparedStatement statement = connection.prepareStatement (sql);
+            statement.execute();
+        }
             
             
             
